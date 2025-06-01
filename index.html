@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Investidor Litoral SC por Samuel Pedroso - Analista de Mercado Imobiliário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+        }
+        .active-link {
+            color: #0d9488; /* teal-600 */
+            font-weight: 500;
+            border-bottom-width: 2px;
+            border-color: #0d9488;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .news-card-img-placeholder {
+            height: 12rem; /* Ajuste conforme necessário */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* semibold */
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-teal-700">Guia do Investidor Litoral SC</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-3 flex items-baseline space-x-1 lg:space-x-1 xl:space-x-2">
+                        <a href="#overview" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">Visão Geral</a>
+                        <a href="#comparison" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">Comparativo</a>
+                        <a href="#strategies" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">Estratégias</a>
+                        <a href="#cub-rental" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">CUB/SC & Aluguel</a>
+                        <a href="#news-launches" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">Notícias & Lançamentos</a>
+                        <a href="#about-us" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">Sobre o Analista</a>
+                        <a href="#simulator" class="nav-link px-1 lg:px-2 py-2 rounded-md text-xs lg:text-sm font-medium text-slate-600 whitespace-nowrap">Simulador</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-800 tracking-tight">
+                    Invista no <span class="text-teal-600">Litoral Mais Valorizado</span> do Brasil
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-600">
+                    Descubra o potencial de Itapema, Balneário Camboriú e Porto Belo, a região que concentra 77% dos lançamentos imobiliários de Santa Catarina e movimentou R$ 45 bilhões em 2024.
+                </p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <p class="text-5xl font-bold text-teal-600">+120%</p>
+                        <p class="mt-2 text-slate-600">Valorização em Balneário Camboriú desde 2019.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <p class="text-5xl font-bold text-teal-600">R$ 11,4 BI</p>
+                        <p class="mt-2 text-slate-600">Em VGV lançado por Porto Belo, líder estadual em 2024.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <p class="text-5xl font-bold text-teal-600">+15%</p>
+                        <p class="mt-2 text-slate-600">Valorização de Itapema nos últimos 12 meses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl">Raio-X das Cidades</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                        Cada cidade oferece um perfil de investimento único. Clique para comparar e encontrar a oportunidade que mais se alinha aos seus objetivos.
+                    </p>
+                </div>
+
+                <div class="mt-10 flex justify-center space-x-2 sm:space-x-4">
+                    <button id="btn-bc" class="city-btn bg-white shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 text-slate-900 font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Baln. Camboriú</button>
+                    <button id="btn-itapema" class="city-btn bg-white shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 text-slate-900 font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Itapema</button>
+                    <button id="btn-porto-belo" class="city-btn bg-white shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 text-slate-900 font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">Porto Belo</button>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div id="city-info-container">
+                        <h3 id="city-name" class="text-3xl font-bold text-slate-900"></h3>
+                        <p id="city-profile" class="mt-2 text-xl font-medium text-teal-600"></p>
+                        <p id="city-description" class="mt-4 text-slate-600"></p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-sm text-slate-500">Preço Médio m²</p>
+                                <p id="city-price" class="text-2xl font-bold text-slate-800"></p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-sm text-slate-500">Projeção de Valorização</p>
+                                <p id="city-projection" class="text-2xl font-bold text-slate-800"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategies" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl">Estratégias para Maximizar seu Retorno</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                        Entenda os conceitos-chave que transformam um imóvel na planta em um poderoso ativo de crescimento patrimonial.
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card bg-slate-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-slate-800">1. Investir na Planta</h3>
+                        <p class="mt-2 text-slate-600">Adquira imóveis por um preço até 25% menor que unidades prontas e beneficie-se da valorização durante a obra. O pagamento facilitado e a correção pelo CUB transformam o investimento em uma poupança com alto potencial de ganho.</p>
+                    </div>
+                    <div class="card bg-slate-50 p-6 rounded-xl">
+                         <h3 class="text-xl font-bold text-slate-800">2. Alavancagem e Liquidez</h3>
+                         <p class="mt-2 text-slate-600">Com um baixo aporte inicial, você controla um ativo de valor muito maior. A alta demanda regional garante liquidez, permitindo a revenda com lucro (ágio) a qualquer momento, mesmo antes da entrega das chaves.</p>
+                    </div>
+                    <div class="card bg-slate-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-slate-800">3. Compactos de Luxo</h3>
+                        <p class="mt-2 text-slate-600">Aproveite a forte tendência de locação por curta temporada. Imóveis compactos e bem localizados geram alta rentabilidade (yield de 8% a 12% a.a.), muito acima do aluguel tradicional.</p>
+                    </div>
+                </div>
+                 <div class="mt-12 p-8 bg-white rounded-lg shadow-md border border-slate-200">
+                    <h3 class="text-center text-2xl font-bold text-slate-800 mb-6">Rentabilidade Comparada: Locação</h3>
+                    <div class="chart-container h-64 sm:h-80">
+                         <canvas id="rentabilityChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-slate-500">Estimativa do retorno anual sobre o investimento (Yield) para imóveis de locação.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cub-rental" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl">CUB/SC e Aluguel por Temporada</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+                        Informações essenciais sobre o Custo Unitário Básico da construção em Santa Catarina e o dinâmico mercado de locação por temporada na região.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Entendendo o CUB/SC</h3>
+                        <div class="mb-6 p-4 bg-teal-50 border-l-4 border-teal-500 rounded-md">
+                            <p class="text-sm text-teal-700 mb-2">O CUB/SC (Custo Unitário Básico) é o índice que corrige as parcelas de imóveis na planta. Para o valor mais recente:</p>
+                            <a href="https://www.sindusconbc.com.br/cub/" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-lg text-center text-sm">
+                                Consulte o Valor Atualizado do CUB/SC
+                            </a>
+                            <p class="text-xs text-teal-500 mt-2">Fonte: SINDUSCON-BC</p>
+                        </div>
+                        <h4 class="text-lg font-semibold text-slate-700 mb-2">Por que o CUB/SC é Positivo para o Investidor?</h4>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2 mt-1">✔</span>
+                                <span><strong>Proteção contra Inflação Setorial:</strong> O CUB reflete os custos reais da construção (materiais, mão de obra). Seu reajuste protege o poder de compra da construtora e, indiretamente, valoriza o investimento do comprador.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2 mt-1">✔</span>
+                                <span><strong>Valorização Atrelada aos Custos:</strong> O aumento do CUB sinaliza uma valorização do custo de reposição do bem, o que naturalmente valoriza o imóvel em construção. Seu capital acompanha a evolução dos custos do setor.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-500 mr-2 mt-1">✔</span>
+                                <span><strong>Transparência e Previsibilidade:</strong> Sendo um índice público e calculado por órgãos setoriais (Sinduscon), o CUB confere maior transparência ao processo de correção dos contratos.</span>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-teal-500 mr-2 mt-1">✔</span>
+                                <span><strong>Componente da Valorização Total:</strong> A valorização de um imóvel na planta é composta pela correção do CUB e pela valorização de mercado (demanda, infraestrutura). O CUB é um dos pilares dessa valorização.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Mercado de Aluguel por Temporada</h3>
+                        <h4 class="text-lg font-semibold text-slate-700 mb-2">Principais Plataformas no Brasil:</h4>
+                        <ul class="space-y-1 text-slate-600 list-disc list-inside mb-6">
+                            <li>Airbnb</li>
+                            <li>Booking.com</li>
+                            <li>Vrbo (anteriormente AlugueTemporada)</li>
+                            <li>TripAdvisor Rentals</li>
+                            <li>Outras plataformas regionais e especializadas</li>
+                        </ul>
+                        <h4 class="text-lg font-semibold text-slate-700 mb-2">Dados e Ganhos Médios (Estimativas):</h4>
+                        <p class="text-slate-600 mb-2">O Litoral Norte de SC é um polo turístico consolidado, com alta demanda o ano todo, especialmente no verão.</p>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-start">
+                                <span class="text-amber-500 mr-2 mt-1">💰</span>
+                                <span><strong>Yield Anual:</strong> Pode variar entre 8% a 12% ao ano para compactos de luxo bem gerenciados, superando o aluguel tradicional.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-amber-500 mr-2 mt-1">📈</span>
+                                <span><strong>Taxa de Ocupação:</strong> Média de 65% a 78%+ em destinos premium com gestão profissional.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-amber-500 mr-2 mt-1">🏖️</span>
+                                <span><strong>Diárias na Alta Temporada:</strong> Imóveis de 2 dormitórios podem gerar R$40.000-R$60.000/mês. Apartamentos de luxo em BC podem ter diárias de R$3.000+.</span>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-amber-500 mr-2 mt-1">🔑</span>
+                                <span><strong>Payback:</strong> Retorno do capital investido pode ocorrer entre 7 e 9 anos com gestão eficiente.</span>
+                            </li>
+                        </ul>
+                        <p class="text-xs text-slate-500 mt-4">Os ganhos são estimativas e dependem da localização, padrão do imóvel, gestão e sazonalidade. Consulte análises específicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="news-launches" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl">Notícias e Próximos Lançamentos</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+                        Mantenha-se atualizado sobre o desenvolvimento da região e descubra as futuras joias imobiliárias.
+                    </p>
+                </div>
+        
+                <div class="mt-12">
+                    <h3 class="text-2xl font-bold text-slate-700 mb-6 text-center md:text-left">Desenvolvimento Regional em Foco</h3>
+                    <div class="space-y-8">
+                        <div class="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h4 class="text-xl font-semibold text-teal-700">Santa Catarina Recebe Investimento Recorde em Infraestrutura Turística</h4>
+                            <p class="mt-2 text-slate-600">O governo estadual anunciou um pacote robusto para melhorias em acessos, saneamento e novos atrativos turísticos no Litoral Norte, com foco especial em Itapema, Balneário Camboriú e Porto Belo, visando impulsionar ainda mais o setor para a temporada 2025/2026 e os anos seguintes.</p>
+                            <p class="text-xs text-slate-400 mt-3">Fonte: Portal de Notícias SC - Data: 28/05/2025</p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h4 class="text-xl font-semibold text-teal-700">Porto Belo se Prepara para Inauguração de Novo Complexo Náutico e de Lazer</h4>
+                            <p class="mt-2 text-slate-600">Com previsão de entrega para o final de 2025, o novo píer e complexo multiuso em Porto Belo promete transformar a orla da cidade, atraindo novos negócios, turismo de alto padrão e valorizando significativamente os imóveis no entorno. O projeto inclui marinas, restaurantes sofisticados e lojas conceito.</p>
+                            <p class="text-xs text-slate-400 mt-3">Fonte: Jornal do Litoral - Data: 15/05/2025</p>
+                        </div>
+                         <div class="p-6 bg-slate-50 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h4 class="text-xl font-semibold text-teal-700">Itapema Anuncia Expansão da Orla e Novas Áreas de Lazer Integradas</h4>
+                            <p class="mt-2 text-slate-600">Seguindo o sucesso de projetos vizinhos, a prefeitura de Itapema detalhou planos para o alargamento de mais um trecho da faixa de areia e a criação de parques lineares com ciclovias e equipamentos esportivos, aumentando a qualidade de vida e o apelo de investimento na cidade.</p>
+                            <p class="text-xs text-slate-400 mt-3">Fonte: Diário Catarinense - Data: 05/06/2025</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-slate-700 mb-8 text-center md:text-left">Antecipe os Próximos Lançamentos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="card bg-white rounded-xl shadow-xl overflow-hidden flex flex-col">
+                            <div class="news-card-img-placeholder bg-teal-500">
+                                Imagem: Residencial Ondas de Itapema
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-xl font-bold text-slate-800">Residencial Ondas de Itapema</h4>
+                                <p class="text-sm text-teal-600 font-medium">Itapema, SC</p>
+                                <p class="text-xs text-slate-500 mt-1">Construtora Horizonte S.A.</p>
+                                <p class="mt-3 text-slate-600 text-sm flex-grow">Apartamentos de 2 e 3 suítes com vista panorâmica para o mar, design biofílico e área de lazer completa no rooftop. Próximo aos principais pontos da Meia Praia.</p>
+                                <p class="mt-4 text-sm text-slate-500">Em breve mais informações.</p>
+                            </div>
+                        </div>
+                        <div class="card bg-white rounded-xl shadow-xl overflow-hidden flex flex-col">
+                             <div class="news-card-img-placeholder bg-sky-500">
+                                Imagem: BC Sky Tower
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-xl font-bold text-slate-800">BC Sky Tower</h4>
+                                <p class="text-sm text-sky-600 font-medium">Balneário Camboriú, SC</p>
+                                <p class="text-xs text-slate-500 mt-1">Empreendimentos Alfa Global</p>
+                                <p class="mt-3 text-slate-600 text-sm flex-grow">O novo marco arquitetônico da cidade. Unidades de alto luxo com pé-direito duplo, diferenciais exclusivos e tecnologia de automação de última geração. Localização privilegiada na quadra mar.</p>
+                                <p class="mt-4 text-sm text-slate-500">Em breve mais informações.</p>
+                            </div>
+                        </div>
+                        <div class="card bg-white rounded-xl shadow-xl overflow-hidden flex flex-col">
+                            <div class="news-card-img-placeholder bg-amber-500">
+                                Imagem: Porto Belo Paradise Lofts
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-xl font-bold text-slate-800">Porto Belo Paradise Lofts</h4>
+                                <p class="text-sm text-amber-600 font-medium">Porto Belo, SC</p>
+                                <p class="text-xs text-slate-500 mt-1">Construtora Nova Era Ltda.</p>
+                                <p class="mt-3 text-slate-600 text-sm flex-grow">Studios e lofts compactos de luxo, com design industrial-chique, ideais para investimento em locação por temporada. Próximo ao novo píer e com infraestrutura compartilhada completa (coworking, lavanderia, fitness center).</p>
+                                 <p class="mt-4 text-sm text-slate-500">Em breve mais informações.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl">Sobre o Analista</h2>
+                    <div class="mt-3 text-teal-600 text-lg font-medium">Samuel Pedroso</div>
+                </div>
+                <div class="mt-8 max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                    <p class="text-lg text-slate-700 mb-4">
+                        Olá! Sou Samuel Pedroso, Analista de Mercado Imobiliário dedicado a fornecer informações estratégicas e insights valiosos para investidores interessados no dinâmico mercado do Litoral de Santa Catarina.
+                    </p>
+                    <p class="text-lg text-slate-700 mb-4">
+                        Meu objetivo com este guia é oferecer uma visão clara das oportunidades, tendências e dados relevantes para auxiliar na sua tomada de decisão de investimento nesta próspera região.
+                    </p>
+                    <p class="text-lg text-slate-700 mb-6">
+                        Está pronto para dar o próximo passo ou deseja uma análise mais personalizada para o seu perfil de investidor?
+                    </p>
+                    <div class="text-center">
+                        <a href="#" id="contact-analyst-whatsapp" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                            Fale Comigo no WhatsApp para Indicação de Consultor
+                        </a>
+                    </div>
+                     <p class="text-sm text-slate-500 mt-6 text-center">
+                        Ao entrar em contato, terei prazer em entender suas necessidades e indicar um consultor imobiliário especializado na região para oferecer um atendimento exclusivo e encontrar as melhores opções de investimento para você.
+                    </p>
+
+                    <hr class="my-8 border-slate-200">
+
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-slate-700 mb-3">Você é Consultor Imobiliário?</h3>
+                        <p class="text-lg text-slate-700 mb-4">
+                            Busco expandir minha rede de parceiros qualificados e dedicados a oferecer o melhor atendimento aos investidores no Litoral Norte de Santa Catarina.
+                        </p>
+                        <p class="text-lg text-slate-700 mb-6">
+                            Se você é um consultor com experiência na região e deseja explorar oportunidades de colaboração, entre em contato.
+                        </p>
+                         <p class="text-sm text-slate-500 mt-6 text-center">
+                           Utilize o botão de WhatsApp acima e mencione seu interesse em parceria para iniciarmos uma conversa.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="simulator" class="py-16 sm:py-24 bg-slate-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 sm:text-4xl">Simule seu Investimento</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                        Veja como um investimento na planta pode ser acessível. Ajuste os valores, entrada, parcela das chaves e prazo para visualizar uma proposta de fluxo de pagamento direto com a construtora.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                    <div class="flex flex-col justify-center">
+                        <div>
+                            <label for="propertyValue" class="block text-sm font-medium text-slate-700">Valor do Imóvel (R$)</label>
+                            <input type="range" id="propertyValue" min="300000" max="800000" step="50000" value="400000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2 accent-teal-600">
+                            <div class="text-center mt-2 text-xl font-bold text-slate-800" id="propertyValueLabel">R$ 400.000</div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="entryPercentage" class="block text-sm font-medium text-slate-700">Percentual de Entrada (10% - 50%)</label>
+                            <input type="range" id="entryPercentage" min="10" max="50" step="1" value="12.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2 accent-teal-600">
+                            <div class="text-center mt-2 text-xl font-bold text-slate-800"><span id="entryPercentageLabel">12.5</span>%</div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="keysPercentage" class="block text-sm font-medium text-slate-700">Percentual na Entrega das Chaves (5% - 25%)</label>
+                            <input type="range" id="keysPercentage" min="5" max="25" step="1" value="10" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2 accent-teal-600">
+                            <div class="text-center mt-2 text-xl font-bold text-slate-800"><span id="keysPercentageLabel">10</span>%</div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="installmentsNumber" class="block text-sm font-medium text-slate-700">Número de Parcelas (24-120 meses)</label>
+                            <input type="range" id="installmentsNumber" min="24" max="120" step="1" value="60" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2 accent-teal-600">
+                            <div class="text-center mt-2 text-xl font-bold text-slate-800"><span id="installmentsNumberLabel">60</span> meses</div>
+                        </div>
+                        <div class="mt-8 text-center">
+                             <h4 class="font-bold text-lg text-slate-800">Proposta de Fluxo de Pagamento</h4>
+                             <p class="text-sm text-slate-500" id="simulatorPeriodText">(Estimativa para 60 meses)</p>
+                             <ul class="mt-4 space-y-2 text-left">
+                                 <li class="flex justify-between items-center"><span id="entryText">Entrada (12.5%):</span> <strong id="entryValue" class="text-teal-600 font-bold">R$ 50.000</strong></li>
+                                 <li class="flex justify-between items-center"><span>4x Reforços Anuais de (5% cada):</span> <strong id="reinforcementValue">R$ 20.000</strong></li>
+                                 <li class="flex justify-between items-center"><span id="keysPaymentText">Pagamento nas Chaves (10%):</span> <strong id="keysPaymentValue" class="text-teal-600 font-bold">R$ 40.000</strong></li>
+                                 <li class="flex justify-between items-center border-t pt-2 mt-2"><span id="monthlyInstallmentsText">60x Parcelas Mensais de:</span> <strong id="monthlyValue">R$ 3.958</strong></li>
+                             </ul>
+                             <p class="text-xs text-slate-400 mt-4">Valores são estimativas e não incluem a correção pelo CUB/SC. Consulte uma proposta real.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-container h-80">
+                            <canvas id="paymentPieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-slate-800 text-white mt-16">
+            <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-2xl font-bold">Pronto para Investir no seu Futuro?</h3>
+                <p class="mt-2 text-slate-300">O momento de participar do ciclo de crescimento do Litoral Norte Catarinense é agora.</p>
+                <p class="mt-4 text-xs text-slate-400">Esta é uma página de demonstração informativa baseada em dados de mercado. As informações não constituem uma oferta de investimento. Consulte sempre um profissional.</p>
+            </div>
+        </footer>
+    </main>
+
+    <a id="whatsapp-float-button" href="#" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white text-2xl p-3 rounded-full shadow-lg z-50 flex items-center justify-center w-14 h-14">
+        <span>💬</span>
+    </a>
+
+    <script>
+        // WhatsApp Configuration - EDITE ESTES VALORES
+        const whatsappPhoneNumber = '5551993278018'; 
+        const whatsappDefaultMessage = 'Olá Samuel Pedroso! Pode me indicar algum consultor imobiliário, estou pensando em investir!';
+        // End WhatsApp Configuration
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const data = {
+                cities: {
+                    bc: {
+                        name: 'Balneário Camboriú',
+                        profile: 'Mercado Maduro e de Luxo',
+                        description: 'Conhecida como a "Dubai Brasileira", possui o m² mais caro do país. O investimento aqui representa segurança e prestígio, com valorização consolidada por projetos icônicos e infraestrutura de ponta. Ideal para quem busca um ativo dolarizado em seu valor.',
+                        price: '> R$ 14.000',
+                        projection: '9.5% a 12.0% a.a.',
+                        valorization: 11.2
+                    },
+                    itapema: {
+                        name: 'Itapema',
+                        profile: 'Potencial em Ascensão',
+                        description: 'Em trajetória de crescimento acelerado, Itapema segue os passos de sua vizinha famosa. Representa uma janela de oportunidade única para alta valorização, com grandes projetos de infraestrutura em andamento que prometem impulsionar ainda mais os preços.',
+                        price: 'R$ 12.660',
+                        projection: '8% a 12% a.a.',
+                        valorization: 15.81
+                    },
+                    'porto-belo': {
+                        name: 'Porto Belo',
+                        profile: 'A Nova Fronteira de Crescimento',
+                        description: 'Líder em lançamentos e vendas em SC, Porto Belo é o hotspot do momento. A mudança no plano diretor e projetos como o píer temático do Hard Rock Café catalisam um potencial de crescimento exponencial, com condições de entrada mais acessíveis.',
+                        price: 'Em ascensão',
+                        projection: 'Cresc. Exponencial',
+                        valorization: 20 
+                    }
+                },
+                rentability: {
+                    labels: ['Curta Temporada (Luxo)', 'Aluguel Tradicional'],
+                    yield: [10, 3.5] 
+                }
+            };
+            
+            let comparisonChart, rentabilityChart, paymentPieChart;
+
+            const formatCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 0 }).format(value);
+            const formatPercentage = (value) => parseFloat(value).toFixed(1);
+
+            function createComparisonChart() {
+                const ctx = document.getElementById('comparisonChart').getContext('2d');
+                comparisonChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Baln. Camboriú', 'Itapema', 'Porto Belo'],
+                        datasets: [{
+                            label: 'Valorização Anual Recente (%)',
+                            data: [data.cities.bc.valorization, data.cities.itapema.valorization, data.cities['porto-belo'].valorization],
+                            backgroundColor: ['#0f766e', '#0d9488', '#14b8a6'],
+                            borderColor: ['#0f766e', '#0d9488', '#14b8a6'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.dataset.label}: ${context.raw}%`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Valorização (%)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function createRentabilityChart() {
+                const ctx = document.getElementById('rentabilityChart').getContext('2d');
+                rentabilityChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: data.rentability.labels,
+                        datasets: [{
+                            label: 'Yield Anual Estimado',
+                            data: data.rentability.yield,
+                            backgroundColor: ['#0d9488', '#d1d5db'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.label}: ${context.raw}% a.a.`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            function updateCityInfo(cityKey) {
+                const cityData = data.cities[cityKey];
+                document.getElementById('city-name').innerText = cityData.name;
+                document.getElementById('city-profile').innerText = cityData.profile;
+                document.getElementById('city-description').innerText = cityData.description;
+                document.getElementById('city-price').innerText = cityData.price;
+                document.getElementById('city-projection').innerText = cityData.projection;
+
+                document.querySelectorAll('.city-btn').forEach(btn => {
+                    btn.classList.remove('bg-teal-600', 'text-white', 'ring-teal-500');
+                    btn.classList.add('bg-white', 'text-slate-900', 'ring-slate-300');
+                });
+                document.getElementById(`btn-${cityKey}`).classList.add('bg-teal-600', 'text-white', 'ring-teal-500');
+                document.getElementById(`btn-${cityKey}`).classList.remove('bg-white', 'text-slate-900', 'ring-slate-300');
+            }
+
+            document.getElementById('btn-bc').addEventListener('click', () => updateCityInfo('bc'));
+            document.getElementById('btn-itapema').addEventListener('click', () => updateCityInfo('itapema'));
+            document.getElementById('btn-porto-belo').addEventListener('click', () => updateCityInfo('porto-belo'));
+            
+            const propertyValueSlider = document.getElementById('propertyValue');
+            const propertyValueLabel = document.getElementById('propertyValueLabel');
+            const entryPercentageSlider = document.getElementById('entryPercentage');
+            const entryPercentageLabel = document.getElementById('entryPercentageLabel');
+            const keysPercentageSlider = document.getElementById('keysPercentage');
+            const keysPercentageLabel = document.getElementById('keysPercentageLabel');
+            const installmentsNumberSlider = document.getElementById('installmentsNumber');
+            const installmentsNumberLabel = document.getElementById('installmentsNumberLabel');
+            const simulatorPeriodText = document.getElementById('simulatorPeriodText');
+            const entryTextEl = document.getElementById('entryText');
+            const entryValueEl = document.getElementById('entryValue');
+            const monthlyInstallmentsTextEl = document.getElementById('monthlyInstallmentsText');
+            const monthlyValueEl = document.getElementById('monthlyValue');
+            const reinforcementValueEl = document.getElementById('reinforcementValue');
+            const keysPaymentTextEl = document.getElementById('keysPaymentText');
+            const keysPaymentValueEl = document.getElementById('keysPaymentValue');
+
+
+            function createPaymentPieChart(entry, totalReinforcementsValue, keysPaymentValue, totalInstallmentsValue) {
+                const ctx = document.getElementById('paymentPieChart').getContext('2d');
+                if(paymentPieChart) {
+                    paymentPieChart.destroy();
+                }
+                const numInstallments = parseInt(installmentsNumberSlider.value);
+                const currentEntryPercentage = parseFloat(entryPercentageSlider.value);
+                const currentKeysPercentage = parseFloat(keysPercentageSlider.value);
+
+                paymentPieChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: [
+                            `Entrada (${formatPercentage(currentEntryPercentage)}%)`, 
+                            'Total Reforços (4x de 5%)',
+                            `Pgto. Chaves (${formatPercentage(currentKeysPercentage)}%)`,
+                            `Total em Parcelas (${numInstallments}x)`
+                        ],
+                        datasets: [{
+                            data: [entry, totalReinforcementsValue, keysPaymentValue, totalInstallmentsValue],
+                            backgroundColor: ['#0d9488', '#14b8a6', '#5eead4', '#a7f3d0'], 
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                             tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed !== null) {
+                                            label += formatCurrency(context.parsed);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function updateSimulator() {
+                const totalValue = parseInt(propertyValueSlider.value);
+                const currentEntryPercentage = parseFloat(entryPercentageSlider.value);
+                const currentKeysPercentage = parseFloat(keysPercentageSlider.value);
+                const numInstallments = parseInt(installmentsNumberSlider.value);
+
+                const entryPercentageDecimal = currentEntryPercentage / 100;
+                const keysPercentageDecimal = currentKeysPercentage / 100;
+                const reinforcementPercentagePerUnit = 0.05; 
+                const numReinforcements = 4;
+
+                const entryValue = totalValue * entryPercentageDecimal;
+                const singleReinforcementValue = totalValue * reinforcementPercentagePerUnit;
+                const totalReinforcementsValue = singleReinforcementValue * numReinforcements;
+                const keysPaymentValue = totalValue * keysPercentageDecimal;
+                
+                const amountToFinanceInInstallments = totalValue - entryValue - totalReinforcementsValue - keysPaymentValue;
+                const monthlyPayment = amountToFinanceInInstallments / numInstallments;
+
+                propertyValueLabel.innerText = formatCurrency(totalValue);
+                entryPercentageLabel.innerText = formatPercentage(currentEntryPercentage);
+                keysPercentageLabel.innerText = formatPercentage(currentKeysPercentage);
+                installmentsNumberLabel.innerText = numInstallments;
+                simulatorPeriodText.innerText = `(Estimativa para ${numInstallments} meses)`;
+                
+                entryTextEl.innerText = `Entrada (${formatPercentage(currentEntryPercentage)}%):`;
+                entryValueEl.innerText = formatCurrency(entryValue);
+                
+                reinforcementValueEl.innerText = formatCurrency(singleReinforcementValue);
+
+                keysPaymentTextEl.innerText = `Pagamento nas Chaves (${formatPercentage(currentKeysPercentage)}%):`;
+                keysPaymentValueEl.innerText = formatCurrency(keysPaymentValue);
+                
+                monthlyInstallmentsTextEl.innerText = `${numInstallments}x Parcelas Mensais de:`;
+                monthlyValueEl.innerText = formatCurrency(monthlyPayment > 0 ? monthlyPayment : 0);
+                
+                createPaymentPieChart(entryValue, totalReinforcementsValue, keysPaymentValue, (monthlyPayment > 0 ? monthlyPayment * numInstallments : 0));
+            }
+            
+            propertyValueSlider.addEventListener('input', updateSimulator);
+            entryPercentageSlider.addEventListener('input', updateSimulator);
+            keysPercentageSlider.addEventListener('input', updateSimulator);
+            installmentsNumberSlider.addEventListener('input', updateSimulator);
+            
+            const sections = document.querySelectorAll('main section'); 
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-link');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-link');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const whatsappButton = document.getElementById('whatsapp-float-button');
+            const contactAnalystButton = document.getElementById('contact-analyst-whatsapp');
+            
+            if (whatsappButton) {
+                const encodedMessage = encodeURIComponent(whatsappDefaultMessage);
+                const whatsappLink = `https://wa.me/${whatsappPhoneNumber}?text=${encodedMessage}`;
+                whatsappButton.href = whatsappLink;
+                if(contactAnalystButton) {
+                    contactAnalystButton.href = whatsappLink;
+                }
+            }
+            
+            updateCityInfo('bc'); 
+            createComparisonChart();
+            createRentabilityChart();
+            updateSimulator(); 
+        });
+    </script>
+</body>
+</html>
